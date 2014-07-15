@@ -100,7 +100,11 @@ header {
         height: 100%;
         margin-bottom: 10px;
     }
-    #contain .touch {
+#command {
+    margin: 10px auto;
+    width: 640px;
+}
+    #command .touch {
         display: inline-block;
         width: 275px;
         height: 151px;
@@ -108,11 +112,11 @@ header {
         text-align: center;
         vertical-align: middle;
     }
-        #contain .touch p {
+        #command .touch p {
             text-align: center;
             margin-top: 10px;
         }
-        #contain .touch span {
+        #command .touch span {
             display: inline-block;
             background-color: #fff;
             width: 50px;
@@ -121,18 +125,18 @@ header {
             /*white-space: nowrap;*/
             color: #19769d;
         }
-        #contain .touch span.icon {
+        #command .touch span.icon {
             overflow: hidden;
             /*text-indent: 100%;
             background-image: url(icon_fleche.svg);*/
             line-height:50px;
             font-size: 1.4em;
         }
-            #contain .touch .direct_top {
+            #command .touch .direct_top {
                 display: block;
                 margin: 2px auto;
             }
-        #contain .touch span.icon_no {
+        #command .touch span.icon_no {
             line-height:55px;
             font-size: 1.5em;
         }
@@ -145,6 +149,15 @@ header {
         width: 320px;
         height: 320px;
     }
+    #command {
+        width: 320px;
+    }
+        #command .touch {
+            display: block;
+            width: 275px;
+            height: 175px;
+            margin: 10px auto;
+        }
 }
 @media (max-width: 639px) {
     html,body{
@@ -154,4 +167,13 @@ header {
         width: 480px;
         height: 480px;
     }
+    #command {
+        width: 480px;
+    }
+        #command .touch {
+            display: block;
+            width: 275px;
+            height: 175px;
+            margin: 10px auto;
+        }
 }

@@ -36,6 +36,8 @@
                     jQuery.noConflict();
                     jQuery('#jquery').addClass('jquery');
             </script>
+    </div>
+    <div id="command">
         <div class="touch">
             <h3>Player 1</h3>
             <p>
