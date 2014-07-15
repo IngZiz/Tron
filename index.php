@@ -1,14 +1,7 @@
 <?php
-$u_agent = $_SERVER['HTTP_USER_AGENT'];
-$verif_agent = null;
-if(preg_match('/MSIE 8/i',$u_agent) || preg_match('/MSIE 7/i',$u_agent) || preg_match('/MSIE 6/i',$u_agent)) 
-{
-    $verif_agent = 1;
-}
-if(preg_match('/android/i',$u_agent) || preg_match('/phone/i',$u_agent) || preg_match('/mobile/i',$u_agent) || preg_match('/xbox/i',$u_agent) || preg_match('/tablet/i',$u_agent)) 
-{
-    $verif_agent = 2;
-}
+    require_once 'Mobile_Detect.php';
+    $detect = new Mobile_Detect;
+    $deviceType = ($detect->isMobile() ? ($detect->isTablet() ? 'tablet' : 'phone') : 'computer');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -28,27 +21,20 @@ if(preg_match('/android/i',$u_agent) || preg_match('/phone/i',$u_agent) || preg_
 <body>
     <header>
 <?php
-    if($verif_agent == 1) 
+    if($deviceType != 'computer')
     {
-        echo "<h3>Sorry but your web browser is too old to let you play at this game</h3>";
-    }
-    if($verif_agent == 2) 
-    {
-        echo "<h3>Sorry but you can't play with your phone</h3>";
+        echo "<h3>Sorry but you're not allow to play with your support</h3>";
     }
 ?>
         <h1>Tron</h1>
         <h2>Made by fan &ndash; for fan</h2>
     </header>
-<?php if($verif_agent<1) { ?>
+<?php if($deviceType == 'computer') { ?>
     <div id="contain">
         <canvas id="c"></canvas>
             <script type="text/javascript">
-                    // jQuery en action
                     jQuery.noConflict();
                     jQuery('#jquery').addClass('jquery');
-                    // Prototype en action
-                    //$('prototype').addClassName('prototype');
             </script>
         <div class="touch">
             <h3>Player 1</h3>
