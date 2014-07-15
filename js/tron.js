@@ -103,8 +103,8 @@ jQuery(document).ready(function () {
 		}
 	};	
 	
-		var tron1 = new cTron('1',"#3ac6e5");
-		var tron2 = new cTron('2',"#3ae5af");
+		var tron1 = new cTron('1',"#6fd7ff");
+		var tron2 = new cTron('2',"#c22727");
 	
 	    // Paramètre, initialise les variables
     function setup(h, l, ps, r) {
@@ -315,7 +315,11 @@ jQuery(document).ready(function () {
         gstarted = false;
         c.fillStyle = 'rgba(0,0,0,0.8)';
         c.fillRect(0, 0, largeur*pixelsize, hauteur*pixelsize);
-        c.fillStyle = '#f00';
+        if (joueur==1)
+            color_text = '#c22727';
+        else
+            color_text = '#6fd7ff';
+        c.fillStyle = color_text;
         c.font = '20px sans-serif';
         c.textAlign = 'center';
         c.fillText('Le joueur ' +joueur+ ' a perdu', largeur/2*pixelsize, hauteur/2*pixelsize);
